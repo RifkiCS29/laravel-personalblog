@@ -70,6 +70,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+<img src="https://github.com/RifkiCS29/laravel-personalblog/blob/master/public/img/Screenshot_2020-08-08%20Web%20Personal%20Blog.png" width="400">&nbsp;&nbsp;
+<img src="https://github.com/RifkiCS29/laravel-personalblog/blob/master/public/img/Screenshot_2020-08-08%20Kotlin%20in%202020.png" width="400">&nbsp;&nbsp;
+<img src="https://github.com/RifkiCS29/laravel-personalblog/blob/master/public/img/Screenshot_2020-08-08%20Dashboard.png">
+<img src="https://github.com/RifkiCS29/laravel-personalblog/blob/master/public/img/Screenshot_2020-08-08%20List%20Kategori.png">
+<img src="https://github.com/RifkiCS29/laravel-personalblog/blob/master/public/img/Screenshot_2020-08-08%20List%20Artikel.png">
+<img src="https://github.com/RifkiCS29/laravel-personalblog/blob/master/public/img/Screenshot_2020-08-08%20List%20Comments.png">
+<img src="https://github.com/RifkiCS29/laravel-personalblog/blob/master/public/img/Screenshot_2020-08-08%20Edit%20Setting.png">
+
 ## How To Install this Project
 
 - Persiapan
