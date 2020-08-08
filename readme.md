@@ -69,3 +69,39 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## How To Install this Project
+
+- Persiapan
+1. Memiliki CLI/Command Line Interface berupa Command Prompt (CMD) atau Power Shell atau Git Bash (selanjutnya kita sebut terminal).
+2. Memiliki Web Server (misal XAMPP) dengan PHP minimal versi 7.3.
+3. Composer telah ter-install, cek dengan perintah composer -V melalui terminal.
+4. NodeJS sudah ter-install, cek dengan perintah npm -v melalui terminal.
+5. Memiliki koneksi internet (untuk proses installasi).
+
+Langkah-Langkah
+1. Download Source Code dari repo Github laravel-personalblog dalam bentuk Zip.
+2. Extract file zip (source code) ke dalam direktori htdocs pada XAMPP, misal htdocs/laravel-personalblog.
+3. Melalui terminal, cd ke direktori laravel-personalblog.
+4. (Sesuai petunjuk installasi) Pada terminal, berikan perintah <b>composer install</b>. Ini yang perlu koneksi internet.
+5. Composer akan menginstall dependency paket dari source code tersebut hingga selesai.
+6. Pada terminal, berikan perintah <b>npm install && npm run dev</b> untuk compile file-file asset / javascript.
+7. Jalankan perintah php artisan, untuk menguji apakah perintah artisan Laravel bekerja.
+8. Buat database baru (kosong) pada mysql (via phpmyadmin) dengan nama <b>laravel-personalblog</b>.
+9. Duplikat file .env.example, lalu rename menjadi .env.
+10. Kembali ke terminal, php artisan key:generate.
+11. Setting koneksi database di file .env (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+    <br>DB_CONNECTION=mysql
+    <br>DB_HOST=localhost
+    <br>DB_PORT=3306
+    <br>DB_DATABASE=laravel-personalblog
+    <br>DB_USERNAME=root
+    <br>DB_PASSWORD=
+12. Jika hanya ingin membuat tabel tanpa data, jalankan perintah <b>php artisan migrate</b>. Cek di phpmyadmin, seharusnya tabel sudah muncul.
+13. Jalankan perintah <b>php artisan db:seed</b> untuk mengisi tabel users yang digunakan untuk proses login
+    <br>EMAIL = rifki@admin.com
+    <br>PASSWORD = admin
+14. Jalankan perintah <b>php artisan storage:link</b>    
+15. Setelah selesai, Jalankan perintah <b>php artisan serve</b> maka dapat diakses dengan http://localhost:8000/
+
+SEKIAN PENJELASAN DARI SAYA, TERIMAKASIH. Created by <b>RIFKI</b>
