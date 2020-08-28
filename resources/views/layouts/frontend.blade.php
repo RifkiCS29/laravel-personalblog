@@ -17,6 +17,7 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
+    <link rel="shortcut icon" href="{{asset('img/rifkidev.ico')}}">
   </head>
   <body>
     
@@ -34,9 +35,9 @@
               </div>
               <div class="col-3 search-top">
                 <!-- <a href="#"><span class="fa fa-search"></span></a> -->
-                <form action="#" class="search-top-form">
+                <form action="{{ route('front.article') }}" method="get" class="search-top-form">
                   <span class="icon fa fa-search"></span>
-                  <input type="text" id="s" placeholder="Type keyword to search...">
+                  <input type="text" name="q" placeholder="Type keyword to search..." value="{{Request::get('q')}}">
                 </form>
               </div>
             </div>
@@ -47,7 +48,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="{{route('front.index')}}">Rifki.dev</a></h1>
+              <h1 class="site-logo"><a href="{{route('front.index')}}">RifkiDev.id</a></h1>
             </div>
           </div>
         </div>

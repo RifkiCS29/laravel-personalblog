@@ -20,7 +20,14 @@ class FrontController extends Controller
 
     public function article()
     {
-        $articles = Article::with(['category', 'comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH')->paginate(8);
+        $articles = Article::with(['category', 'comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH');
+        
+        if (request()->q != '') {
+            $articles = $articles->where('title', 'LIKE', '%' . request()->q . '%');
+        }
+
+        $articles = $articles->paginate(8);
+
         return view('frontend.article', compact('articles'));
     }
 

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('title')
-    <title>Web Personal Blog</title>
+    <title>RifkiDev.id</title>
 @endsection
 
 @section('content')

@@ -151,6 +151,14 @@ class ArticleController extends Controller
         if($article->header_articles && file_exists(storage_path('app/public/'.$article->header_articles))){
             \Storage::delete('public/'.$article->header_articles);
         }
+
+        $comments = $article->comments();
+
+        foreach($comments->get() as $comment){
+            $comment->child()->delete();
+        }
+        
+        $article->comments()->delete();
         $article->delete();
 
         return redirect()->route('articles.index')->with('success','Article Has Been Deleted!');
