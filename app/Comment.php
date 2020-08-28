@@ -15,7 +15,7 @@ class Comment extends Model
 
     public function child()
     {
-        return $this->hasMany(Comment::class, 'parent_id');
+        return $this->hasMany(Comment::class, 'parent_id')->where('status', 'PUBLISH');
     }
 
     public function getStatusLabelAttribute()
