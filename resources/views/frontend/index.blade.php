@@ -20,7 +20,7 @@
                         
                         <span class="author mr-2"><img src="{{ asset('front/images/person_rifki.jpg') }}" alt="Colorlib"> {{$lat->created_by}}</span>&bullet;
                         <span class="mr-2">{{$lat->created_at->format('d F Y')}}</span> &bullet;
-                        <span class="ml-2"><span class="fa fa-comments"></span> {{$lat->comments->count()}}</span>
+                        <span class="ml-2"><span class="fa fa-comments"></span> {{$lat->publish_comments->count()}}</span>
                         
                       </div>
                       <h3>{{$lat->title}}</h3>
@@ -55,7 +55,7 @@
                     <div class="post-meta">
                       <span class="author mr-2"><img src="{{ asset('front/images/person_rifki.jpg') }}" alt="Colorlib"> {{$row->created_by}}</span>&bullet;
                       <span class="mr-2">{{$row->category->name}}</span> &bullet;
-                      <span class="ml-2"><span class="fa fa-comments"></span> {{$row->comments->count()}}</span>
+                      <span class="ml-2"><span class="fa fa-comments"></span> {{$row->publish_comments->count()}}</span>
                     </div>
                     <h2>{{ $row->title }}</h2>
                     </div>

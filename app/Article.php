@@ -31,6 +31,11 @@ class Article extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class)->whereNull('parent_id')->where('status', 'PUBLISH');
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
+    }
+
+    public function publish_comments()
+    {
+        return $this->comments()->where('status', 'PUBLISH');
     }
 }

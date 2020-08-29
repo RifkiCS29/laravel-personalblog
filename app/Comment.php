@@ -15,9 +15,14 @@ class Comment extends Model
 
     public function child()
     {
-        return $this->hasMany(Comment::class, 'parent_id')->where('status', 'PUBLISH');
+        return $this->hasMany(Comment::class, 'parent_id');
     }
 
+    public function publish_child()
+    {
+        return $this->child()->where('status', 'PUBLISH');
+    }
+    
     public function getStatusLabelAttribute()
     {
         //ADAPUN VALUENYA AKAN MENCETAK HTML BERDASARKAN VALUE DARI FIELD STATUS

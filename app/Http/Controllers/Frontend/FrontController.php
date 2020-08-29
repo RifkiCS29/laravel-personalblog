@@ -13,14 +13,14 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $articles = Article::with(['category', 'comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH')->paginate(6);
-        $latest = Article::with(['category', 'comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH')->paginate(3);
+        $articles = Article::with(['category', 'publish_comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH')->paginate(6);
+        $latest = Article::with(['category', 'publish_comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH')->paginate(3);
         return view('frontend.index', compact('articles', 'latest'));
     }
 
     public function article()
     {
-        $articles = Article::with(['category', 'comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH');
+        $articles = Article::with(['category', 'publish_comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH');
         
         if (request()->q != '') {
             $articles = $articles->where('title', 'LIKE', '%' . request()->q . '%');
@@ -34,7 +34,7 @@ class FrontController extends Controller
     public function categoryArticle($slug)
     {
        if (Category::whereSlug($slug)->exists()){
-            $articles = Category::where('slug', $slug)->first()->article()->with(['category', 'comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH')->paginate(8);
+            $articles = Category::where('slug', $slug)->first()->article()->with(['category', 'publish_comments'])->orderBy('created_at', 'DESC')->where('status', 'PUBLISH')->paginate(8);
             return view('frontend.article', compact('articles'));
         }else{
             return redirect()->back();
@@ -45,7 +45,7 @@ class FrontController extends Controller
     public function show($slug)
     {
         if (Article::whereSlug($slug)->exists()){
-            $article = Article::with(['category', 'comments', 'comments.child'])->where('slug', $slug)->first();
+            $article = Article::with(['category', 'publish_comments', 'publish_comments.publish_child'])->where('slug', $slug)->first();
             return view('frontend.show', compact('article'));
         }else{
             return redirect()->back();

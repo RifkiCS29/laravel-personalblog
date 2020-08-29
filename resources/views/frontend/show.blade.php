@@ -15,7 +15,7 @@
 			   <div class="post-meta">
 					<span class="author mr-2"><img src="{{ asset('front/images/person_rifki.jpg')}}" alt="Colorlib" class="mr-2"> {{$article->created_by}}</span>&bullet;
 					<span class="mr-2">{{$article->created_at->format('d F Y')}}</span> &bullet;
-					<span class="ml-2"><span class="fa fa-comments"></span> {{$article->comments->count()}}</span>
+					<span class="ml-2"><span class="fa fa-comments"></span> {{$article->publish_comments->count()}}</span>
 				</div>
 			  <h1 class="mb-4">{{$article->title}}</h1>
 			  <a class="category mb-5" href="{{ url('/category/' . $article->category->slug) }}">{{$article->category->name}}</a>
@@ -41,9 +41,9 @@
 			  </div>
   
 			  <div class="pt-5">
-			  	<h3 class="mb-5">{{$article->comments->count()}} Comments</h3>
+			  	<h3 class="mb-5">{{$article->publish_comments->count()}} Comments</h3>
 				<ul class="comment-list">
-				    @foreach ($article->comments as $com)
+				    @foreach ($article->publish_comments as $com)
 					<li class="comment">
 						<div class="vcard">
 							<img src="{{ asset('front/images/users.png')}}" alt="Image placeholder">
@@ -53,7 +53,7 @@
 							<p>{{ $com->comment }}</p>
 							<p><a href="javascript:void(0)" onclick="balasKomentar({{ $com->id }}, '{{ $com->comment }}')">Reply</a></p>
 						</div>
-						@foreach ($com->child as $val) 
+						@foreach ($com->publish_child as $val) 
 						<ul class="children">
 							<li class="comment">
 							  <div class="vcard">
@@ -126,7 +126,7 @@
 				  <div class="post-meta">
 					<span class="category">{{$rand->category->name}}</span>
 					<span class="mr-2">{{$rand->created_at->format('d F Y')}}</span> &bullet;
-					<span class="ml-2"><span class="fa fa-comments"></span> {{$rand->comments->count()}}</span>
+					<span class="ml-2"><span class="fa fa-comments"></span> {{$rand->publish_comments->count()}}</span>
 				  </div>
 				  <h3>{{$rand->title}}</h3>
 				</div>
